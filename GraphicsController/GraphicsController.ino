@@ -173,14 +173,14 @@ void UpdateLineComboGauge(void){
   }
   String str;
   char * cstr;
-  if(curx%10==0){
+  /*if(curx%30==0){
   tft.getTextBounds(teststring, cursorx, cursory, &x1, &y1, &fillw, &fillh);
   tft.fillRect(x1, y1, fillw, fillh,ILI9341_BLACK);
   tft.setCursor(cursorx,cursory);
   str = String(curx);
   str.toCharArray(cstr,16);
   tft.print("TE");
-  }
+  }*/
   
 }
 // If using the breakout, change pins as desired
@@ -206,7 +206,7 @@ void setup(void){
   tft.fillScreen(ILI9341_BLACK);
   tft.setRotation(1);
   tft.setFont(&FreeSansBold24pt7b);
-  tft.setTextColor(ILI9341_WHITE);
+  
   
   //drawClassicGauge();
   //drawCircleGauge();
@@ -218,5 +218,6 @@ void loop(void){
   //updateClassicGauge();
   //updateCircleGauge();
   UpdateLineComboGauge();
+  delay(5);
    
 }
